@@ -2,6 +2,8 @@ class SessionsController < ApplicationController
   def new
 
   end
+  def show
+  end
   def create
     if params[:name].nil? || params[:name].strip.empty?
       redirect_to login_path
