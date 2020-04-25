@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :logout
   def login
-    session[:name] ||= []
+    session[:name]
   end
   def logout
     session.clear
