@@ -5,10 +5,10 @@ class SessionsController < ApplicationController
   end
   def create
     session[:name]=params[:name]
-    redirect_to login_path
+    redirect_to root_path
   end
   def destroy
     logout
-    redirect_to root_path
+    redirect_to new_path
   end
 end
