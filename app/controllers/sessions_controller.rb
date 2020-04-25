@@ -4,11 +4,11 @@ class SessionsController < ApplicationController
   def show
   end
   def create
-    if !params.include?(:name)||params[:name].empty?
-      redirect_to login_path
-    else
+    if params.include?(:name) && !params[:name].empty?
       session[:name]=params[:name]
       redirect_to root_path
+    else
+      redirect_to login_path
     end
   end
   def destroy
