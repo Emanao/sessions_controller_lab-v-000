@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def show
   end
   def create
-    
+
     if params[:name].nil? || params[:name].strip.empty?
       redirect_to root_path
     else
@@ -15,6 +15,6 @@ class SessionsController < ApplicationController
   end
   def destroy
     logout
-    redirect_to login_path
+    redirect_to root_path
   end
 end
