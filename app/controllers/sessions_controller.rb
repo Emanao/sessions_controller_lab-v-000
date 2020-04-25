@@ -4,8 +4,12 @@ class SessionsController < ApplicationController
   def show
   end
   def create
-    session[:name]=params[:name]
-    redirect_to root_path
+    if params.include?(:name)||params[:name].empty? 
+      redirect_to login_path
+    else
+      session[:name]=params[:name]
+      redirect_to root_path
+    end
   end
   def destroy
     logout
