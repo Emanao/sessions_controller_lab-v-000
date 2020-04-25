@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
   end
   def create
     if params.include?(:name) && !params[:name].strip.empty?
+      byebug
       login = params[:name]
       redirect_to root_path
     else
