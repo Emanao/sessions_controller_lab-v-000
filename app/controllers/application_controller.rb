@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
   helper_method :logout
   def login
     session[:name] ||= []
-    session[:name]=params[:name]
   end
   def logout
     session.clear
